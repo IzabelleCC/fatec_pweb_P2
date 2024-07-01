@@ -1,0 +1,40 @@
+<div class="login-container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <div class="message">
+        <h4>{{mensagem}}</h4>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" [(ngModel)]="cliente.email">
+      </div>
+      <div class="form-group">
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" [(ngModel)]="cliente.senha">
+      </div>
+      <button class="btn btn-primary" (click)="entrar()">Entrar</button>
+      <div class="links">
+        <a href="javascript:void(0)" (click)="openModal()">Esqueci minha senha</a>
+        <a href="./cadastro">Novo Cadastro</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div *ngIf="showModal" class="modal show">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="modal-title">Recuperar senha</span>
+          <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <label for="emailReset">Email:</label>
+          <input type="text" [(ngModel)]="cliente.email" id="emailReset">
+          <button class="btn btn-primary" (click)="enviarSenha()">Enviar</button>
+          <p>{{mensagemModal}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

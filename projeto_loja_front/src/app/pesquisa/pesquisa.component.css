@@ -1,0 +1,246 @@
+.search-container {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.search-container h3 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.input-group .form-control {
+    border-top-left-radius: 0.375rem;
+    border-bottom-left-radius: 0.375rem;
+    padding: 10px;
+    font-size: 1em;
+}
+
+.input-group .btn {
+    background-color: #C06363;
+    border-color: #C06363;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-top-right-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+    transition: background-color 0.3s ease;
+}
+
+.input-group .btn:hover {
+    background-color: #a54d4d;
+    border-color: #a54d4d;
+}
+
+.card {
+    border-width: 2px;
+    border-color: #e0e0e0;
+    border-style: solid;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    flex-grow: 1;
+    font-family: cursive;
+}
+
+.card-text {
+    font-size: 1.5em;
+    margin: 5px 0;
+    color: #000000;
+}
+
+.card-text-desc {
+    font-size: 0.8em;
+    margin: 5px 0;
+    color: #333333;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.price-add-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.btn-adicionar {
+    background-color: #C06363;
+    color: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    gap: 5px;
+}
+
+.btn-adicionar img {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-detalhes {
+    color: #ffffff;
+    border-radius: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+    position: relative;
+}
+
+.btn-detalhes img {
+    width: 25px;
+    height: auto;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.btn-detalhes:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: rgb(230, 230, 230);
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    font-family: cursive;
+    font-size: 1.5em;
+    color: #000000;
+    margin: 0;
+}
+
+.btn-modal {
+    font-weight: 500;
+    border-radius: 0.375rem;
+    padding: 5px 10px;
+    font-size: 1rem;
+    background-color: #ff6b6b;
+    border-color: #ff6b6b;
+    color: #fff;
+    flex: 1 1 auto;
+    margin: 10px;
+    text-align: center;
+}
+
+.row > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #000;
+}
+
+.btn-close:hover {
+    color: #ff0000;
+}
+
+.modal-title {
+    padding-right: 2.5rem;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #f03c3c;
+    border-radius: 30%;
+    width: 50px;
+    height: 50px;
+}
+
+.tamanho-text {
+    font-size: 1.5em;
+    font-family: cursive;
+}
+
+.estoque-text {
+    font-size: 0.8em;
+    font-family: cursive;
+}

@@ -1,0 +1,62 @@
+<div class="search-container mt-5 mb-4 text-center">
+  <h3>Resultado da Pesquisa</h3>
+  <div class="input-group mt-3">
+      <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="busca" (keyup.enter)="pesquisar()">
+      <button class="btn btn-primary" type="button" (click)="pesquisar()">Pesquisar</button>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+<div *ngFor="let item of lista" class="card col-6 me-1 ms-1 mt-1 mb-1" style="width:300px">
+  <div>
+    <img class="card-img-top" src="./assets/modelos/{{item.codigo}}.1.webp" 
+          width="46px" alt="Card image" (click)="abrirDetalhe(item)">
+  </div>
+  <div class="card-body">
+    <div>
+      <h4 class="card-title">{{item.nome}}</h4>
+    </div>
+    <p class="card-text"><b>R$ {{item.preco}}</b></p>
+    <div class="price-add-container">
+      <button type="button" class="btn btn-adicionar" (click)="comprar(item)">
+        Comprar
+        <img src="./assets/adicionar_item.png" style="width: 20px; height: 20px;">
+      </button>
+      <button type="button" class="btn btn-detalhes" (click)="abrirDetalhe(item)">
+        <img src="./assets/ver-detalhes.png" style="width: 25px">
+        <span class="tooltip-text">Ver detalhes</span>
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show': exibirModal}" style="display: block;" *ngIf="exibirModal">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title">
+        <p>{{ mensagem }}</p>
+        <p><b>O que você deseja fazer?</b></p>
+      </div>
+      <button type="button" class="btn-close" aria-label="Close" (click)="exibirModal = false">
+        &times;
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-6 text-start">
+          <button type="button" class="btn btn-modal" (click)="exibirModal = false">
+            Continuar comprando
+          </button>
+        </div>
+        <div class="col-6 text-end">
+          <button type="button" class="btn btn-modal" (click)="irCarrinho()">
+            Ir para o carrinho
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

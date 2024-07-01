@@ -1,0 +1,13 @@
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="logout-container text-center">
+        <b class="logout-message">{{mensagem}}</b>
+        <div class="row mt-3" *ngIf="cliente">
+            <div class="col-12 col-md-6 mb-2 mb-md-0">
+                <button class="btn btn-primary w-100" (click)="fazerLogout()">Sim</button>
+            </div>
+            <div class="col-12 col-md-6">
+                <button class="btn btn-primary w-100" (click)="irParaDados()">Não</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,181 @@
+/* Geral */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .login-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .login-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Cursive', sans-serif;
+  }
+  
+  .message {
+    text-align: center;
+    margin-bottom: 20px;
+    color: red;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .btn:hover {
+    background-color: #ff4c4c;
+  }
+  
+  .links {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .links a {
+    color: #ff6b6b;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Modal */
+  .modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1050;
+  }
+  
+  .modal-dialog {
+    max-width: 500px;
+    margin: 1.75rem auto;
+  }
+  
+  .modal-content {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 10px;
+  }
+  
+  .modal-title {
+    font-family: 'Cursive', sans-serif;
+    font-size: 1.5em;
+    color: #000;
+  }
+  
+  .btn-close {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .btn-close:hover {
+    color: #ff0000;
+  }
+  
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+  }
+  
+  .modal-body label {
+    font-size: 1em;
+    color: #000;
+  }
+  
+  .modal-body input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  
+  .modal-body button {
+    background-color: #ff6b6b;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1em;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .modal-body button:hover {
+    background-color: #ff4c4c;
+  }
+  

@@ -1,0 +1,35 @@
+<h3 class="titulo">Meus dados</h3>
+
+<div *ngIf="cliente" class="cliente-dados-container">
+  <div class="cliente-dados">
+    <div class="cliente-dados-item">
+      <strong>Nome:</strong>
+      <span>{{ cliente.nome }}</span>
+    </div>
+    <div class="cliente-dados-item">
+      <strong>Email:</strong>
+      <span>{{ cliente.email }}</span>
+    </div>
+    <div class="cliente-dados-item">
+      <strong>Celular:</strong>
+      <span>{{ formatarTelefone(cliente.telefone) }}</span>
+    </div>
+    <div class="cliente-dados-item">
+      <strong>CPF:</strong>
+      <span>{{ formatarCPF(cliente.cpf) }}</span>
+    </div>
+    <div class="cliente-dados-item">
+      <strong>Endereço:</strong>
+      <span>
+        {{ cliente.logradouro }} - {{ cliente.numero }}, {{ cliente.complemento }}<br>
+        {{ cliente.bairro }}<br>
+        {{ cliente.cidade }} - {{ cliente.estado }}<br>
+        {{ formatarCEP(cliente.cep) }}
+      </span>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!cliente">
+  <p class="mensagem-erro">Faça login para visualizar seus dados</p>
+</div>

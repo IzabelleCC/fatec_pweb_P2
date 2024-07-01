@@ -1,0 +1,77 @@
+<div id="cadastro" class="text-center">
+  <h1><b>Cadastre-se</b></h1>
+</div>
+<br>
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show': exibirModal}" style="display: block;" *ngIf="exibirModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" aria-label="Close" (click)="exibirModal = false">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{ mensagem }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-modal" (click)="exibirModal = false">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="form-group">
+      <input type="text" [(ngModel)]="clienteCadastro.nome" placeholder="Nome completo *" class="form-control" required>
+      <div *ngIf="campoInvalido('nome')" class="text-danger">Campo obrigatório</div>
+    </div>
+    <div class="form-group">
+      <input type="email" [(ngModel)]="clienteCadastro.email" placeholder="Email *" class="form-control" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+      <div *ngIf="campoInvalido('email')" class="text-danger">Email inválido</div>
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="clienteCadastro.telefone" placeholder="Celular *" class="form-control" required (input)="formatarTelefone($event)" (blur)="formatarTelefone($event)">
+      <div *ngIf="campoInvalido('telefone')" class="text-danger">Telefone inválido</div>
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="clienteCadastro.cpf" placeholder="CPF *" class="form-control" required (input)="formatarCPF($event)" (blur)="formatarCPF($event)">
+      <div *ngIf="campoInvalido('cpf')" class="text-danger">CPF inválido</div>
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="clienteCadastro.cep" placeholder="CEP *" class="form-control" required (input)="formatarCEP($event)" (blur)="onBlur()">
+      <div *ngIf="campoInvalido('cep')" class="text-danger">Campo obrigatório</div>
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="clienteCadastro.logradouro" placeholder="Logradouro *" class="form-control" required>
+      <div *ngIf="campoInvalido('logradouro')" class="text-danger">Campo obrigatório</div>
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="clienteCadastro.numero" placeholder="Número *" class="form-control" required>
+      <div *ngIf="campoInvalido('numero')" class="text-danger">Campo obrigatório</div>
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="clienteCadastro.bairro" placeholder="Bairro *" class="form-control" required>
+      <div *ngIf="campoInvalido('bairro')" class="text-danger">Campo obrigatório</div>
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="clienteCadastro.cidade" placeholder="Cidade *" class="form-control" required>
+      <div *ngIf="campoInvalido('cidade')" class="text-danger">Campo obrigatório</div>
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="clienteCadastro.complemento" placeholder="Complemento" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="clienteCadastro.estado" placeholder="Estado *" class="form-control" required>
+      <div *ngIf="campoInvalido('estado')" class="text-danger">Campo obrigatório</div>
+    </div>
+    <div class="form-group">
+      <input type="password" [(ngModel)]="clienteCadastro.senha" placeholder="Senha *" class="form-control" required>
+      <div *ngIf="campoInvalido('senha')" class="text-danger">Campo obrigatório</div>
+    </div>
+    <div class="text-end">
+      <button (click)="gravar()" class="btn btn-success">Salvar</button>
+    </div>
+  </div>
+  <br>
+</div>

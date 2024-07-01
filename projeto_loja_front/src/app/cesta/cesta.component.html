@@ -1,0 +1,59 @@
+<br>
+<div id="carrinho" class="text-center">
+    <h1><b>Carrinho de Compras</b></h1>
+</div>
+<br>
+<div class="alert alert-warning" *ngIf="mensagem!=''">
+     {{mensagem}}
+</div>
+<div class="container">
+    <div class="table-responsive">
+        <table class="table" *ngIf="lista.length>0">
+            <thead>
+                <tr>
+                    <th style="width: 5%;"></th>
+                    <th style="width: 45%;">Produto</th>
+                    <th style="width: 10%;" id="table-text-center">Tamanho</th>
+                    <th style="width: 10%;" id="table-text-center">Qtd</th>
+                    <th style="width: 15%;" id="table-text-center">Valor Unitário</th>
+                    <th style="width: 15%;" id="table-text-center">Valor Total</th>
+                </tr>
+            </thead>  
+            <tbody>
+                <tr *ngFor="let item of lista; let i = index">
+                    <td>
+                        <button class="btn btn-excluir" (click)="excluirItem(i)">
+                            <img src="./assets/excluir_item.png" style="width: 25px">
+                        </button>
+                    </td>
+                    <td>{{item.nome}}</td>
+                    <td id="table-text-center">{{item.tamanho}}</td>
+                    <td id="table-text-center">{{item.quantidade}}</td>
+                    <td id="table-text-center">R$ {{item.valorUnitario}}</td>
+                    <td id="table-text-center">R$ {{item.valorTotal}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th>Total:</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th id="table-text-center">R$ {{totalCesta}}</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-6 text-start">
+            <button class="btn btn-limpar" (click)="limpar();">
+                Esvaziar Carrinho
+                <img src="./assets/excluir.png" style="width: 15px">
+            </button>
+        </div>
+        <div class="col-6 text-end">
+            <button class="btn btn-pedido" (click)="irPedido()">Finalizar Compra</button>
+        </div>
+    </div>
+</div>

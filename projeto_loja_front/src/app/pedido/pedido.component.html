@@ -1,0 +1,115 @@
+<div class="pedido-container" *ngIf="cliente">
+  <h2 class="titulo">Informações do Pedido</h2>
+  <div class="pedido-dados">
+    <div class="pedido-dados-item">
+      <strong>Data do pedido:</strong>
+      <span>{{ pedido?.dataPedido }}</span>
+    </div>
+    <div class="pedido-dados-item">
+      <strong>Status do pedido:</strong>
+      <span>{{ pedido?.status }}</span>
+    </div>
+    <div class="pedido-dados-item">
+      <strong>Cliente:</strong>
+      <span>{{ cliente.nome }}</span>
+    </div>
+    <div class="pedido-dados-item">
+      <strong>Entrega:</strong>
+      <span>{{ cliente.logradouro }}, {{ cliente.numero }}, {{ cliente.bairro }}, {{ cliente.cidade }} - {{ cliente.estado }} - {{ cliente.cep }}</span>
+    </div>
+  </div>
+</div>
+
+<div class="pedido-itens-container" *ngIf="itens.length > 0">
+  <h2 class="titulo">Itens do Pedido</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width: 5%;">#</th>
+        <th style="width: 45%;">Produto</th>
+        <th style="width: 10%;" id="table-text-center">Tamanho</th>
+        <th style="width: 10%;" id="table-text-center">Qtd</th>
+        <th style="width: 15%;" id="table-text-center">Valor Unitário</th>
+        <th style="width: 15%;" id="table-text-center">Valor Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of itens; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.nome }}</td>
+        <td id="table-text-center">{{ item.tamanho }}</td>
+        <td id="table-text-center">{{ item.quantidade }}</td>
+        <td id="table-text-center">R$ {{ item.valorUnitario }}</td>
+        <td id="table-text-center">R$ {{ item.valorTotal }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="5">Frete:</th>
+        <th id="table-text-center">R$ {{ pedido?.frete }}</th>
+      </tr>
+      <tr>
+        <th colspan="5">Total:</th>
+        <th id="table-text-center">R$ {{ pedido?.total }}</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<div class="pedido-itens-container" *ngIf="!itens.length">
+  <p>Nenhum item adicionado ao pedido</p>
+</div>
+<div class="pedido-itens-container">
+  <button class="btn btn-primary" (click)="salvarPedido()">Ir para pagamento</button>
+</div>
+
+<!-- Modal de Pagamento -->
+<ng-template #modalPagamento let-modal>
+  <div class="modal-dialog">
+    <div class="modal-content no-background">
+      <div class="modal-header">
+        <h4 class="modal-title">Informações de Pagamento</h4>
+        <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-dados-item">
+          <strong>Número do Pedido:</strong>
+          <span>{{ pedidoSalvo?.codigo }}</span>
+        </div>
+        <div class="modal-dados-item">
+          <strong>Valor Total:</strong>
+          <span>R$ {{ pedidoSalvo?.total }}</span>
+        </div>
+        <div class="modal-dados-item">
+          <strong>Pagamento PIX:</strong>
+          <span>R$ {{ (pedidoSalvo?.total || 0) * 0.90 }}</span>
+        </div>
+        <div class="modal-dados-item">
+          <strong>Parcelado em 10x de </strong>
+          <span>R$ {{ (pedidoSalvo?.total || 0) / 10 }}</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="efetuarPagamento();">Efetuar pagamento</button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<!-- Modal de Sucesso no Pagamento -->
+<ng-template #modalSucessoPagamento let-modal>
+  <div class="modal-dialog">
+    <div class="modal-content no-background">
+      <div class="modal-header">
+        <h4 class="modal-title">Pagamento Efetuado</h4>
+        <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+        <p>Seu pagamento foi efetuado com sucesso!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="pagamento()">Fechar</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,119 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./assets/modelos/{{produto.codigo}}.1.webp" class="d-block w-100" alt="Imagem do produto">
+          </div>
+          <div class="carousel-item active">
+            <img src="./assets/modelos/{{produto.codigo}}.2.webp" class="d-block w-100" alt="Imagem do produto">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-6 d-flex flex-column align-items-center">
+      <h1 class="product-name">{{produto.nome}}</h1><br>
+      <h2 class="text-muted price">R$ {{produto.preco * 0.90 | number: '1.2-2'}}</h2>
+      <p>via PIX com <b>10% de desconto</b></p>
+      <p>R$ {{produto.preco | number: '1.2-2'}} em 10 x de 
+        <b class="text-preco-parcelado">R$ {{produto.preco / 10 | number: '1.2-2'}}</b></p><br>
+      <button type="button" class="btn btn-medidas" (click)="abrirTabelaMedidas()">
+        <img src="./assets/tabela_medidas.png" style="width: 30px">  Ver Tabela de Medidas</button><br>
+      <button type="button" class="btn btn-adicionar" (click)="comprar(produto)">Comprar</button>
+    </div>
+    <div class="product-description mt-3">
+      <p>{{produto.descricao}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show': exibirModal}" style="display: block;" *ngIf="exibirModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title">
+            <p>{{ mensagem }}</p>
+            <p><b>O que você deseja fazer?</b></p>
+          </div>
+          <button type="button" class="btn-close" aria-label="Close" (click)="exibirModal = false">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-6 text-start">
+              <button type="button" class="btn btn-modal" (click)="exibirModal = false">
+                Continuar comprando
+              </button>
+            </div>
+            <div class="col-6 text-end">
+              <button type="button" class="btn btn-modal" (click)="irCarrinho()">
+                Ir para o carrinho
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show': exibirModalTabela}" style="display: block;" *ngIf="exibirModalTabela">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Tabela de Medidas</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="fecharTabelaMedidas()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-striped table-hover text-center">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Tamanho</th>
+                <th scope="col">Busto (cm)</th>
+                <th scope="col">Cintura (cm)</th>
+                <th scope="col">Quadril (cm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">P</th>
+                <td>82-90</td>
+                <td>64-72</td>
+                <td>90-100</td>
+              </tr>
+              <tr>
+                <th scope="row">M</th>
+                <td>90-98</td>
+                <td>72-80</td>
+                <td>100-108</td>
+              </tr>
+              <tr>
+                <th scope="row">G</th>
+                <td>98-107</td>
+                <td>80-89</td>
+                <td>108-117</td>
+              </tr>
+              <tr>
+                <th scope="row">GG</th>
+                <td>107-117</td>
+                <td>89-100</td>
+                <td>117-127</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  

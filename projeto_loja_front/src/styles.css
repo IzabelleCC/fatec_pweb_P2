@@ -1,0 +1,87 @@
+.body {
+    background-color: rgb(230, 230, 230);
+    position: relative;
+}
+
+.navbar-links {
+    background-color: #b3a7a7;
+    padding: 8px 0;
+    margin-bottom: 20px;
+    width: auto;
+}
+
+.navbar-links a {
+    font-family: cursive;
+    font-size: 18px;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.navbar-links a:hover {
+    color: #292929;
+    background-color: #f8b9b9;
+}
+
+.dropdown-menu {
+    background-color: #b3a7a7;
+    border: 1px solid  #b3a7a7;
+    border-radius: 4px;
+}
+
+.dropdown-item {
+    font-family: cursive;
+    font-size: 18px;
+    color: #292929;
+    padding: 10px 15px;
+}
+
+.dropdown-item:hover {
+    background-color: #f8b9b9;
+    color: #292929;
+}
+
+.btn-whatsapp {
+    font-family: cursive;
+    color: #000000;
+    padding: 8px 12px;
+    border-width: 2px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe41;
+    border-color: #27be19;
+}
+
+#Atendimento {
+    font-family: cursive;
+    color: #bd4975;
+    font-style: oblique;
+}
+
+#horario {
+    font-family: monospace;
+    color: #000000;
+    font-style: italic;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+#email a {
+    color: #000000;
+    margin-top: 0.25rem;
+    text-decoration: none;
+}
+
+#email a:hover {
+    color: #bd4975;
+}
+
+#Siga {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #bd4975;
+    font-style: oblique;
+}

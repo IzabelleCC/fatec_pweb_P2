@@ -1,0 +1,93 @@
+
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-control {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.375rem 0.75rem;
+    width: 100%;
+  }
+  
+  .form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+  }
+  
+  .btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .btn-success:hover {
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+#cadastro {
+    font-family: Arial, sans-serif; /* Fonte mais padrão para melhor legibilidade */
+    color: #333; /* Cor escura para o título */
+    font-family: cursive;
+    font-style: normal; /* Estilo de fonte normal */
+    margin-bottom: 1rem; /* Espaçamento abaixo do cabeçalho */
+}
+
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background-color:rgb(230, 230, 230);
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 10px; /* Espaçamento interno */
+  margin: 10px; /* Margem para evitar tocar as bordas da tela */
+}
+.modal-dialog {
+  flex-grow: 1;
+}
+.modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  font-family: cursive;
+  font-size: 1.5em;
+  color: #000000;
+  margin: 0;
+}
+.btn-modal {
+  font-weight: 500;
+  border-radius: 0.375rem;
+  padding: 5px 5px;
+  font-size: 1rem;
+  background-color: #ff6b6b; 
+  border-color: #ff6b6b;
+  color: #fff;
+  text-align: end;
+}
+.btn-close {
+  position: absolute;
+  top: 1rem; /* Ajuste o posicionamento no topo */
+  right: 1rem; /* Ajuste o posicionamento à direita */
+  background: transparent; /* Fundo transparente */
+  border: none; /* Sem borda */
+  font-size: 1.5rem;
+  line-height: 1; /* Ajuste o alinhamento da linha */
+  cursor: pointer; /* Muda o cursor */
+  color: #000; /* Cor do ícone 'X' */
+}
+
+.btn-close:hover {
+  color: #ff0000; /* Cor ao passar o mouse */
+}
+
+.modal-title {
+  padding-right: 2.5rem;
+}
